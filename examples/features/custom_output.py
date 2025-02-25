@@ -36,8 +36,8 @@ controller = Controller(output_model=Posts)
 
 
 async def main():
-	task = 'Go to hackernews show hn and give me the first  5 posts'
-	model = ChatOpenAI(model='gpt-4o')
+	task = 'acesse o site https://www.vinhosjolimont.com.br/blog navege por todos as postagens do blog'
+	model = ChatOpenAI(model='gpt-4o-mini')
 	agent = Agent(task=task, llm=model, controller=controller)
 
 	history = await agent.run()
@@ -50,7 +50,7 @@ async def main():
 			print('\n--------------------------------')
 			print(f'Title:            {post.post_title}')
 			print(f'URL:              {post.post_url}')
-			print(f'Comments:         {post.num_comments}')
+			# print(f'Comments:         {post.num_comments}')
 			print(f'Hours since post: {post.hours_since_post}')
 	else:
 		print('No result')

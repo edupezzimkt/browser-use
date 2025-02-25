@@ -37,7 +37,7 @@ async def main():
 		)
 	) as browser_context:
 		agent = Agent(
-			task="go to google.com and type 'OpenAI' click search and give me the first url",
+			task="go to google.com and type 'Eduardo Pezzi' click search and give me the first url",
 			llm=llm,
 			browser_context=browser_context,
 		)

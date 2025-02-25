@@ -17,7 +17,7 @@ llm = ChatOpenAI(
 controller = Controller()
 
 
-task = 'Find the founders of browser-use and draft them a short personalized message'
+task = "Acesse o site da https://www.snowland.com.br/ingressos/, feche a popup. escola o dia de amanhã no calendário, depoi clique em pesquisar ingressos. após esta ação vai carregar os produtos eu quero como objetivo: pegar o nome e o preço de todos os ingressos que contêm na página."
 
 agent = Agent(task=task, llm=llm, controller=controller)
 
@@ -26,7 +26,7 @@ async def main():
 	await agent.run()
 
 	# new_task = input('Type in a new task: ')
-	new_task = 'Find an image of the founders'
+	new_task = 'Encontre os ingressos e o valor'
 
 	agent.add_new_task(new_task)
 

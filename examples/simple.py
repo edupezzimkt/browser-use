@@ -9,10 +9,10 @@ load_dotenv()
 
 # Initialize the model
 llm = ChatOpenAI(
-	model='gpt-4o',
+	model='gpt-4o-mini',
 	temperature=0.0,
 )
-task = 'Find the founders of browser-use and draft them a short personalized message'
+task = 'Encontre informações atuais dos meus concorrentes Arco, Songz, VMG Aires, e Sanz Clima, quero saber dos lançamentos e inovações'
 
 agent = Agent(task=task, llm=llm)
 
