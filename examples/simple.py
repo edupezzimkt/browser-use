@@ -13,10 +13,9 @@ llm = ChatOpenAI(
 	temperature=0.0,
 )
 task = """
-acesse o site https://www.salton.com.br/blog encontre todos os titulos dos artigos do blog, rolando para baixo para carregar, tem que esperar ele carregar novos artigos, só pare quando encotrar todos.
-depois faça um resumo com os principais temas e as 10 palavras mais frequentes
-por fim sugira novos temas que ainda não foram falados mas são de interesse dos apreciadores de vinho em português seguindo as tendências e as dicas dos especialistas. 
+você é um analista de marketing e vai coletar 10 comentários na página https://www.tripadvisor.com.br/Attraction_Review-g775227-d2389005-Reviews-Vitivinicola_Jolimont-Canela_State_of_Rio_Grande_do_Sul.html
 
+Você vai extrair as notas, os principais insights positivos e negativos e fazer um relatório de até 500 palavras para a direção da empresa. 
 """
 agent = Agent(task=task, llm=llm)
 
