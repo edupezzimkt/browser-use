@@ -1,5 +1,5 @@
 import asyncio
-
+import os
 from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
 
@@ -7,16 +7,25 @@ from browser_use import Agent
 
 load_dotenv()
 
+# Carregar variáveis do .env
+load_dotenv()
+EMAIL = os.getenv("EMAIL")
+SENHA = os.getenv("SENHA")
+
 # Initialize the model
 llm = ChatOpenAI(
 	model='gpt-4o-mini',
 	temperature=0.0,
 )
-task = """
-você é um analista de marketing e vai coletar 10 comentários na página https://www.tripadvisor.com.br/Attraction_Review-g775227-d2389005-Reviews-Vitivinicola_Jolimont-Canela_State_of_Rio_Grande_do_Sul.html
 
-Você vai extrair as notas, os principais insights positivos e negativos e fazer um relatório de até 500 palavras para a direção da empresa. 
+task = f"""
+você vai acessar https://asimov.academy/.
+depois você vai clicar em "entrar" e escrever {EMAIL} e a senha "{SENHA}". 
+vai acessar na esquerda o menu lateral e clicar em "cursos".
+vai acessar o curso Introdução à Lógica de Programação.
+vai acessar o vídeo 'O Conceito de Algoritmo' e assistir por 5 segundos.
 """
+
 agent = Agent(task=task, llm=llm)
 
 
